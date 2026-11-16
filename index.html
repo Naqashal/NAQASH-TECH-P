@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="#080817" name="theme-color"/>
+<meta content="NAQASH ALI — VIP Portfolio" name="description"/>
+<title>NAQASH TECH | VIP PORTFOLIO</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&family=Orbitron:wght@500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=Sora:wght@400;500;600;700;800&display=swap');
+:root{--bg:#090507;--panel:#1a0b10;--panel2:#241016;--line:#4b2830;--a:#ff2947;--b:#ff8290;--txt:#fff7f8;--muted:#c7aeb3;--pink:#ff1744; --glow:rgba(255,35,79,.28);}
+/* THEME COLORS */
+body.theme-green { --a: #00ff88; --b: #a1ffce; --pink: #00cc6a; --glow: rgba(0,255,136,.28); }
+body.theme-blue { --a: #00e5ff; --b: #a1f5ff; --pink: #00b3cc; --glow: rgba(0,229,255,.28); }
+body.theme-white { --a: #ffffff; --b: #e6e6e6; --pink: #cccccc; --glow: rgba(255,255,255,.28); }
+
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{margin:0;background:radial-gradient(ellipse at 50% 20%,#3a0b16 0,transparent 42%),radial-gradient(ellipse at 90% 80%,#310812 0,transparent 34%),var(--bg);color:var(--txt);font-family:Manrope,Arial,sans-serif;overflow-x:hidden}
+body.theme-green { background:radial-gradient(ellipse at 50% 20%,#052414 0,transparent 42%),radial-gradient(ellipse at 90% 80%,#021a0f 0,transparent 34%),var(--bg); }
+body.theme-blue { background:radial-gradient(ellipse at 50% 20%,#051c24 0,transparent 42%),radial-gradient(ellipse at 90% 80%,#02141a 0,transparent 34%),var(--bg); }
+body.theme-white { background:radial-gradient(ellipse at 50% 20%,#1f1f1f 0,transparent 42%),radial-gradient(ellipse at 90% 80%,#141414 0,transparent 34%),var(--bg); }
+body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.15;background-image:linear-gradient(#ff52601a 1px,transparent 1px),linear-gradient(90deg,#ff52601a 1px,transparent 1px);background-size:42px 42px;z-index:-1}
+
+.wrap{width:min(1120px,92%);margin:auto}.top{position:sticky;top:0;z-index:120;padding:12px 0;background:#090817d9;backdrop-filter:blur(18px);border-bottom:1px solid var(--a)}
+nav{display:flex;align-items:center;justify-content:space-between;gap:12px}.brand{font:700 .9rem Outfit, sans-serif;letter-spacing:1px}.brand b{color:var(--a)}
+
+/* THEME SWITCHER */
+.theme-switcher { display: flex; gap: 8px; align-items: center; margin-right: 10px; background: rgba(0,0,0,0.4); padding: 5px 10px; border-radius: 20px; border: 1px solid #333; }
+.t-btn { width: 18px; height: 18px; border-radius: 50%; cursor: pointer; border: 2px solid transparent; transition: 0.3s; }
+.t-red { background: #ff2947; color: #ff2947; }
+.t-green { background: #00ff88; color: #00ff88; }
+.t-blue { background: #00e5ff; color: #00e5ff; }
+.t-white { background: #ffffff; color: #ffffff; }
+.t-btn.active { border-color: #fff; transform: scale(1.15); box-shadow: 0 0 10px currentColor; }
+@media(max-width:520px) { .theme-switcher { display:none; } } /* hidden on very small mobile for space, can show if needed */
+
+.live-pill{display:inline-flex;align-items:center;gap:7px;border:1px solid var(--line);background:#1c0b11;border-radius:25px;padding:6px 10px;font-size:.68rem;color:#ffdce0;box-shadow:inset 0 0 14px rgba(255,255,255,0.05),0 0 18px rgba(255,255,255,0.05)}
+.live-dot{width:7px;height:7px;border-radius:50%;background:var(--a);box-shadow:0 0 10px var(--a);animation:livePulse 1.2s infinite}
+@keyframes livePulse{50%{opacity:.35;transform:scale(.75)}}
+
+.hero{text-align:center;padding:58px 0 48px;position:relative}.available{display:inline-block;padding:12px 23px;border:1px solid var(--a);border-radius:40px;background:#211014;color:var(--b);font-weight:800;letter-spacing:2px;font-size:.78rem;box-shadow:0 0 0 5px rgba(255,255,255,0.05),0 0 32px var(--glow);animation:vipPulse 2.8s ease-in-out infinite}
+.avatar-wrap{width:230px;height:230px;margin:32px auto 24px;position:relative;display:grid;place-items:center;cursor:pointer;isolation:isolate;filter:drop-shadow(0 15px 35px var(--glow))}
+.avatar-wrap:before,.avatar-wrap:after{content:"";position:absolute;inset:0;border-radius:50%;border:2px dashed var(--a);animation:spin 13s linear infinite;z-index:-1}.avatar-wrap:after{inset:10px;border:3px solid transparent;border-top-color:var(--a);border-right-color:var(--a);animation:spin 5s linear infinite reverse;filter:drop-shadow(0 0 8px var(--b))}
+.avatar-wrap img{width:184px;height:184px;object-fit:cover;border-radius:50%;border:5px solid var(--a);outline:3px solid var(--b);box-shadow:0 0 28px var(--a),0 0 55px var(--glow);transition:transform .55s cubic-bezier(.2,.8,.2,1),filter .5s}
+.avatar-wrap:hover img{transform:scale(1.055) rotate(2deg)}
+.hero h1{font:800 clamp(2rem,7vw,4rem) Orbitron;margin:15px 0;background:linear-gradient(90deg,#fff,var(--b),var(--a),#fff);background-size:220%;background-clip:text;color:transparent;animation:shine 5s linear infinite;text-shadow:0 0 34px var(--glow)}
+.role{font:600 1.15rem Orbitron;color:#d8c8ee;text-shadow:0 0 18px var(--glow)}
+.actions{display:flex;justify-content:center;gap:13px;flex-wrap:wrap;margin-top:27px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:14px 23px;border-radius:40px;background:linear-gradient(110deg,var(--pink),#d20d32);color:white;font-weight:800;border:1px solid var(--b);box-shadow:0 8px 25px var(--glow);cursor:pointer;position:relative;overflow:hidden;isolation:isolate;transition:transform .15s ease-out,box-shadow .25s,filter .25s !important}
+.btn:before{content:"";position:absolute;inset:-80% -30%;z-index:-1;background:linear-gradient(110deg,transparent 40%,#ffffff55 50%,transparent 60%);transform:translateX(-100%) rotate(15deg);transition:transform .7s}
+.btn:hover{box-shadow:0 12px 34px var(--glow);filter:saturate(1.15)}
+.btn:hover:before{transform:translateX(100%) rotate(15deg)}
+.btn.ghost{background:#181427;border-color:#514268;box-shadow:none}
+
+.section{padding:38px 0}
+.panel{position:relative;overflow:hidden;padding:21px;border-radius:34px;background:linear-gradient(145deg,rgba(31,12,20,.91),rgba(12,7,12,.94));backdrop-filter:blur(14px);border:1px solid var(--line);box-shadow:0 22px 65px #0008,inset 0 1px #ffffff12;transition:transform .1s ease-out, border-color .35s, box-shadow .35s !important}
+.panel:hover{border-color:var(--a);box-shadow:0 26px 70px #0009,0 0 28px var(--glow)}
+.heading{text-align:center;font-size:1.28rem;font-weight:800;margin:0 0 25px;letter-spacing:.3px;text-shadow:0 0 20px var(--glow)}
+.heading span{color:var(--a)}
+
+.aboutgrid{display:grid;grid-template-columns:.8fr 1.2fr;gap:24px;align-items:center}
+.aboutpic{width:100%;max-width:235px;aspect-ratio:3/4;object-fit:cover;border-radius:22px;border:2px solid var(--a);box-shadow:0 0 28px var(--glow);position:relative;z-index:2}
+.info{display:grid;gap:12px}.info div{padding:15px;border-radius:17px;border:1px solid rgba(255,255,255,0.1);background:linear-gradient(115deg,rgba(255,255,255,0.05),rgba(22,8,13,.94) 55%,rgba(255,255,255,0.02));box-shadow:inset 0 1px 0 rgba(255,255,255,.06),0 9px 25px rgba(0,0,0,.24);position:relative;overflow:hidden}
+.info div:before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:linear-gradient(180deg,#fff,var(--a),#000);box-shadow:0 0 16px var(--a)}
+.info small{display:block;margin-bottom:7px;color:var(--b);font-family:'Space Grotesk',sans-serif;font-size:.7rem;font-weight:800;letter-spacing:.2em}
+.info strong{display:block;color:#fff;font-family:'Sora',sans-serif;font-size:.94rem;letter-spacing:.025em;text-shadow:0 0 12px var(--glow)}
+
+.skills{display:grid;gap:15px}.skill{background:linear-gradient(145deg,#140b12,#09070b);border:1px solid #332744;padding:13px;border-radius:18px}.skilltop{display:flex;justify-content:space-between;gap:10px;font-weight:700;font-size:.86rem}.skilltop b{color:var(--a);text-shadow:0 0 12px var(--glow)}
+.bar{height:10px;border-radius:20px;background:#05050b;border:1px solid #44334f;margin-top:12px;overflow:hidden}.bar i{display:block;height:100%;width:0;border-radius:20px;background:linear-gradient(90deg,var(--a),var(--b),#fff);box-shadow:0 0 15px var(--a);position:relative}
+
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.tile{padding:16px 12px;text-align:center;border-radius:25px;background:linear-gradient(145deg,rgba(45,16,27,.94),rgba(15,8,13,.98));border:1px solid var(--line);box-shadow:0 10px 25px #0005;transition:transform .1s ease-out, border-color .35s, box-shadow .35s !important;position:relative;overflow:hidden}
+.tile:hover{border-color:var(--a);box-shadow:0 18px 38px var(--glow)}
+.ico{width:50px;height:50px;margin:0 auto 13px;border-radius:15px;display:grid;place-items:center;background:radial-gradient(circle at 30% 25%,var(--b),var(--a) 30%,#000 75%);border:1px solid var(--b);color:#fff;box-shadow:0 0 0 4px rgba(255,255,255,0.05),0 0 18px var(--glow);font-size:1.35rem}
+.tile h3{font:650 .88rem Outfit,sans-serif;margin:9px 0;letter-spacing:.25px}.tile p{color:var(--muted);font-size:.74rem;line-height:1.5;margin:0}
+
+.timeline{display:grid;gap:14px}.timecard{padding:20px;border-left:3px solid var(--a);background:linear-gradient(90deg,rgba(255,255,255,0.05),rgba(255,255,255,0.01));border-radius:0 18px 18px 0;border:1px solid var(--line)}
+.timecard small{color:var(--a);font-weight:800;letter-spacing:3px}.timecard h3{font:600 .9rem Outfit, sans-serif}.timecard p{color:var(--muted);line-height:1.6}
+
+.gallery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.post-card{min-width:0;border:1px solid var(--line);border-radius:17px;padding:7px;background:linear-gradient(145deg,#29121b,#0d080c);position:relative;overflow:hidden;box-shadow:0 10px 26px #0007;transition:transform .1s ease-out !important}
+.post-card img{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:12px;cursor:zoom-in;display:block;transition:transform .45s cubic-bezier(.2,.8,.2,1),filter .35s}
+.post-card:hover img{transform:scale(1.035);filter:saturate(1.12)}
+.post-actions{display:flex;align-items:center;gap:8px;padding:7px 2px 2px;font-size:.72rem;color:#f8dce0}
+.post-actions button{border:0;background:transparent;color:var(--b);font-size:1.2rem;padding:0 3px;cursor:pointer}
+.post-actions button.liked{color:var(--a);text-shadow:0 0 10px var(--a)}
+.post-card p{font-size:.68rem;color:var(--muted);margin:3px 2px 5px}
+
+.service-section{padding:50px 0 110px}
+.service-card{cursor:pointer;min-height:138px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;isolation:isolate}
+.service-card.active{box-shadow:0 0 0 1px var(--b),0 0 35px var(--glow);border-color:var(--a)}
+
+.contact-form{max-width:680px;margin:18px auto 0;display:grid;gap:11px;padding:clamp(16px,3vw,24px);border:1px solid var(--line);border-radius:20px;background:linear-gradient(145deg,rgba(255,255,255,0.05),rgba(14,7,11,.94));box-shadow:0 14px 34px rgba(0,0,0,.26)}
+.contact-form input,.contact-form textarea{width:100%;padding:13px 15px;border:1px solid var(--line);border-radius:13px;background:rgba(8,5,9,.78);color:#fff;font:500 .84rem Manrope;transition:border-color .25s,box-shadow .25s,transform .25s;outline:none}
+.contact-form input:focus,.contact-form textarea:focus{transform:translateY(-1px);border-color:var(--b);box-shadow:0 0 0 3px rgba(255,255,255,0.1),0 0 18px var(--glow)}
+
+.review-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}.review-card{padding:14px!important;min-height:130px;background:linear-gradient(140deg,rgba(255,255,255,0.05),rgba(18,8,12,.94))}
+.stars{color:#ffc65c;letter-spacing:2px;font-size:.85rem}
+
+.bottomnav{position:fixed;bottom:0;left:0;right:0;z-index:119;background:rgba(9,6,12,.88);backdrop-filter:blur(16px);border:1px solid var(--line);border-bottom:0;border-radius:28px 28px 0 0;padding:10px 5px calc(10px + env(safe-area-inset-bottom));display:flex;justify-content:space-around;box-shadow:0 -10px 35px #0006}
+.bottomnav a{color:#9a91b2;text-align:center;font-size:1.25rem;min-width:42px;transition:color .2s,transform .2s;text-decoration:none}
+.bottomnav a span{display:block;font-size:.58rem}.bottomnav a:hover{transform:translateY(-3px);color:var(--b)}
+.bottomnav a.active{color:var(--a);filter:drop-shadow(0 0 8px var(--b))}
+
+.social-connect-buttons{display:flex;justify-content:center;gap:16px;flex-wrap:wrap;max-width:680px;margin:24px auto 4px}
+.social-big-btn{display:flex;align-items:center;gap:14px;min-width:min(260px,100%);flex:1;padding:17px 20px;border:1px solid #74303e;border-radius:18px;text-align:left;color:#fff;text-decoration:none;background:linear-gradient(135deg,#211016,#0c090c);box-shadow:0 10px 28px #0008,inset 0 1px #ffffff12;transition:transform .25s,box-shadow .25s,border-color .25s}
+.social-big-btn:hover{transform:translateY(-5px);border-color:var(--a);box-shadow:0 14px 34px var(--glow)}
+.social-png { width: 34px; height: 34px; object-fit: contain; filter: drop-shadow(0 0 10px rgba(255,255,255,0.7)); }
+.social-big-btn strong{display:block;font:800 1rem 'Sora',sans-serif;letter-spacing:.3px}
+.social-big-btn small{display:block;margin-top:4px;color:var(--muted);font-size:.75rem}
+.social-arrow{margin-left:auto;color:var(--b);font-size:22px}
+
+.premium-footer{position:relative;overflow:hidden;padding:34px 18px 92px!important;text-align:center;border-top:1px solid var(--line);background:linear-gradient(180deg,#17080d,#080608)}
+.footer-glow{position:absolute;left:50%;top:-65px;width:260px;height:110px;transform:translateX(-50%);background:var(--glow);filter:blur(55px);pointer-events:none}
+.footer-brand{position:relative;font:900 1.3rem Orbitron,sans-serif;letter-spacing:.12em;color:#fff}
+.footer-brand span{color:var(--a)}
+
+.scroll-progress{position:fixed;top:0;left:0;width:0;height:3px;z-index:150;background:linear-gradient(90deg,var(--a),var(--b),#fff);box-shadow:0 0 14px var(--a);pointer-events:none}
+.back-top{position:fixed;right:16px;bottom:88px;z-index:118;width:42px;height:42px;border-radius:50%;border:1px solid var(--b);background:#1b0b12;color:white;font-size:1.15rem;box-shadow:0 0 22px var(--glow);opacity:0;visibility:hidden;transform:translateY(10px);transition:.25s;cursor:pointer}
+.back-top.show{opacity:1;visibility:visible;transform:translateY(0)}
+
+/* VIP CURSOR, CANVAS, WIDGETS */
+@media (pointer: fine) { body { cursor: none; } }
+#c-dot, #c-trail { position: fixed; border-radius: 50%; pointer-events: none; z-index: 999999; transform: translate(-50%, -50%); transition: opacity 0.3s; }
+#c-dot { width: 8px; height: 8px; background: var(--a); box-shadow: 0 0 12px var(--a), 0 0 20px var(--a); }
+#c-trail { width: 32px; height: 32px; border: 1.5px solid var(--a); transition: transform 0.15s ease-out, opacity 0.3s; box-shadow: inset 0 0 10px var(--glow); }
+.vip-widgets { position: fixed; left: 16px; top: 90px; z-index: 99; display: flex; flex-direction: column; gap: 12px; }
+.vip-btn { background: rgba(14, 7, 11, 0.85); border: 1px solid var(--line); border-radius: 20px; padding: 7px 14px; color: var(--b); font-size: 0.72rem; font-family: 'Space Grotesk', sans-serif; font-weight: 700; letter-spacing: 1px; backdrop-filter: blur(8px); display: flex; align-items: center; gap: 8px; cursor: pointer; box-shadow: 0 0 20px var(--glow); transition: 0.3s; text-transform: uppercase; }
+.vip-btn:hover { border-color: var(--a); color: #fff; transform: translateX(5px); }
+.vip-btn.active-music { border-color: var(--a); color: #fff; text-shadow: 0 0 8px var(--a); box-shadow: inset 0 0 15px var(--glow); }
+#cyberCanvas { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -3; pointer-events: none; opacity: 0.3; }
+
+/* TYPING */
+.typing-tagline{min-height:25px;margin:10px auto 0;text-align:center;color:var(--b);font:700 .78rem Manrope,sans-serif;letter-spacing:.12em;text-transform:uppercase}
+.typing-tagline i{display:inline-block;width:2px;height:13px;margin-left:4px;vertical-align:-2px;background:var(--a);animation:typingBlink .75s steps(2) infinite}
+@keyframes typingBlink{50%{opacity:0}}
+@keyframes spin{to{transform:rotate(360deg)}}@keyframes shine{to{background-position:220% center}}
+@keyframes vipPulse{50%{box-shadow:0 0 0 8px rgba(255,255,255,0.05),0 0 38px var(--glow)}}
+
+/* CHATBOT CSS */
+.nt-chat-launcher{position:fixed;right:18px;bottom:150px;z-index:1001;border:1px solid var(--b);border-radius:30px;padding:13px 18px;background:linear-gradient(135deg,var(--a),#8f1028);color:#fff;font-weight:900;box-shadow:0 8px 28px var(--glow);cursor:pointer}
+.nt-chat-panel{display:none;position:fixed;right:16px;bottom:210px;width:min(350px,calc(100vw - 28px));height:440px;max-height:65vh;z-index:1002;overflow:hidden;border:1px solid var(--a);border-radius:20px;background:#10090d;box-shadow:0 18px 55px #000c,0 0 28px var(--glow);flex-direction:column}
+.nt-chat-panel.open{display:flex;animation:ntChatIn .22s ease-out}@keyframes ntChatIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+.nt-chat-head{display:flex;justify-content:space-between;align-items:center;padding:14px 16px;background:linear-gradient(100deg,var(--line),#1b0a10);border-bottom:1px solid var(--a);color:#fff}
+.nt-chat-head b{display:block;font-size:.82rem;letter-spacing:.08em}.nt-chat-head small{display:block;color:var(--b);font-size:.68rem;margin-top:4px}
+.nt-chat-head small i{display:inline-block;width:7px;height:7px;border-radius:50%;background:#49e58a;margin-right:5px}
+.nt-chat-head button{border:0;background:transparent;color:#fff;font-size:25px;cursor:pointer}
+.nt-chat-messages{flex:1;overflow:auto;padding:14px;display:flex;flex-direction:column;gap:10px}.nt-bubble{max-width:88%;padding:10px 12px;border-radius:14px;font-size:.8rem;line-height:1.5;overflow-wrap:anywhere}
+.nt-bubble.bot{align-self:flex-start;background:#29121a;color:#ffe9ed;border:1px solid #5c2735}.nt-bubble.user{align-self:flex-end;background:var(--a);color:#fff}
+.nt-chat-quick{display:flex;gap:7px;padding:0 12px 10px;flex-wrap:wrap}.nt-chat-quick button{border:1px solid var(--line);background:#1e0c12;color:#ffdce3;border-radius:20px;padding:6px 10px;font-size:.68rem;cursor:pointer}
+.nt-chat-form{display:flex;gap:8px;padding:10px;border-top:1px solid var(--line)}.nt-chat-form input{min-width:0;flex:1;border:1px solid var(--line);border-radius:22px;padding:10px 13px;background:#080609;color:#fff;outline:none}.nt-chat-form button{width:40px;border:0;border-radius:50%;background:var(--a);color:#fff;font-size:18px}.nt-chat-foot{text-align:center;padding:0 8px 9px;color:var(--muted);font-size:.6rem}
+@media(max-width:650px){.hero{padding-top:43px}.bottomnav{overflow-x:auto;justify-content:flex-start;gap:7px}.bottomnav a{flex:1;min-width:43px}.back-top{bottom:92px}.vip-widgets{top:70px;left:10px;transform:scale(0.85);transform-origin:left top}}
+</style>
+</head>
+<body>
+<div class="scroll-progress" id="scrollProgress"></div>
+<button aria-label="Back to top" class="back-top" id="backTop">↑</button>
+<header class="top"><nav class="wrap">
+  <div class="brand brand-lockup brand-premium">
+    <img alt="NAQASH TECH profile" class="brand-dp" src="https://i.ibb.co/nNZX9Hpk/file-00000000bbf08211bb337eff0f74d187.png" style="width:38px;height:38px;border-radius:50%;border:2px solid var(--a);"/>
+    <b class="premium-brand-text">NAQASH TECH</b>
+  </div>
+  <!-- Live Theme Switcher -->
+  <div class="theme-switcher">
+    <button class="t-btn t-red active" data-theme="t-red" aria-label="Red Theme"></button>
+    <button class="t-btn t-green" data-theme="t-green" aria-label="Green Theme"></button>
+    <button class="t-btn t-blue" data-theme="t-blue" aria-label="Blue Theme"></button>
+    <button class="t-btn t-white" data-theme="t-white" aria-label="White Theme"></button>
+  </div>
+  <span class="live-pill"><i class="live-dot"></i> LIVE ONLINE</span>
+</nav></header>
+
+<!-- VIP Floating Widgets -->
+<div class="vip-widgets">
+   <div class="vip-btn" id="liveTime"><i class="live-dot" style="margin:0"></i> <span id="pkTime">ATTOCK: --:--</span></div>
+   <button class="vip-btn" id="musicToggle" aria-label="Toggle Music">🎵 BGM: OFF</button>
+</div>
+
+<main>
+<section class="hero wrap" id="home"><div class="available">● AVAILABLE FOR WORK</div>
+<div class="avatar-wrap"><img alt="Naqash Ali" id="mainPhoto" src="https://i.ibb.co/nNZX9Hpk/file-00000000bbf08211bb337eff0f74d187.png"/></div>
+<h1>NAQASH TECH</h1><div class="role">UI/UX Designer · Web Developer</div>
+<div class="typing-tagline"><span id="typingWords"></span><i></i></div>
+<div class="actions"><a class="btn" href="#projects">▣ View Work</a><a class="btn ghost" href="#contact">✉ Contact</a></div></section>
+
+<section class="section wrap" id="about"><div class="panel"><h2 class="heading">♙ <span>About Me</span></h2><div class="aboutgrid"><div class="about-photo-wrap"><img alt="Naqash portrait" class="aboutpic" src="https://i.ibb.co/q3BL9DwZ/file-000000005d7881fa902dc0ab4d6b9aa9.png"/></div><div class="info">
+<div><small>● NAME</small><strong>Naqash Ali</strong></div>
+<div><small>● AGE</small><strong>21</strong></div>
+<div><small>● LOCATION</small><strong>Mirza, Attock</strong></div>
+<div><small>● EMAIL</small><strong><a href="mailto:naqash78780@gmail.com" style="color:var(--txt)">naqash78780@gmail.com</a></strong></div>
+</div></div></section>
+
+<section class="section wrap" id="skills"><div class="panel"><h2 class="heading">▱ <span>My Skills</span></h2><div class="skills">
+<div class="skill"><div class="skilltop">〈〉 Web Development <b>90%</b></div><div class="bar"><i data-progress="90"></i></div></div>
+<div class="skill"><div class="skilltop">♧ UI/UX Design <b>88%</b></div><div class="bar"><i data-progress="88"></i></div></div>
+<div class="skill"><div class="skilltop">▣ Cyber Security <b>80%</b></div><div class="bar"><i data-progress="80"></i></div></div>
+<div class="skill"><div class="skilltop">▤ Database Design <b>80%</b></div><div class="bar"><i data-progress="80"></i></div></div>
+</div></div></section>
+
+<section class="section wrap" id="work"><div class="panel"><h2 class="heading">⚒ <span>What I Do</span></h2><div class="grid">
+<article class="tile"><div class="ico">〈〉</div><h3>Web Development</h3><p>Modern responsive websites</p></article>
+<article class="tile"><div class="ico">♧</div><h3>UI/UX Design</h3><p>Beautiful glassmorphism interfaces</p></article>
+<article class="tile"><div class="ico">▣</div><h3>Cyber Security</h3><p>Website security and protection</p></article>
+<article class="tile"><div class="ico">◎</div><h3>SEO Optimization</h3><p>Improve search visibility</p></article>
+</div></div></section>
+
+<section class="section wrap" id="gallery"><div class="panel"><h2 class="heading">▧ <span>Gallery Preview</span></h2><div class="gallery">
+<article class="post-card"><img alt="Naqash portrait" src="https://i.ibb.co/q3BL9DwZ/file-000000005d7881fa902dc0ab4d6b9aa9.png"/></article>
+<article class="post-card"><img alt="NAQASH TECH" src="https://i.ibb.co/nNZX9Hpk/file-00000000bbf08211bb337eff0f74d187.png"/></article>
+</div></div></section>
+
+<section class="section wrap" id="social-connect">
+  <div class="panel social-connect-panel">
+    <h2 class="heading">✦ <span>Connect With Me</span></h2>
+    <p style="text-align:center; color:var(--muted); font-size:0.8rem;">Let's connect — follow on TikTok or message directly on WhatsApp.</p>
+    <div class="social-connect-buttons">
+      <a class="social-big-btn whatsapp-big" href="https://wa.me/923115414770" target="_blank" rel="noopener noreferrer">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/512px-WhatsApp.svg.png" class="social-png" alt="WhatsApp">
+        <span><strong>WhatsApp</strong><small>Chat with me</small></span><span class="social-arrow">↗</span>
+      </a>
+      <a class="social-big-btn tiktok-big" href="https://www.tiktok.com/@Itskashieditz333" target="_blank" rel="noopener noreferrer">
+        <img src="https://upload.wikimedia.org/wikipedia/en/thumb/a/a9/TikTok_logo.svg/512px-TikTok_logo.svg.png" class="social-png" alt="TikTok">
+        <span><strong>TikTok</strong><small>Follow my profile</small></span><span class="social-arrow">↗</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="section wrap" id="contact"><div class="panel"><h2 class="heading">✉ <span>Contact Me</span></h2>
+<div class="actions" style="margin:14px auto 18px">
+<a class="btn ghost" href="mailto:naqash78780@gmail.com">✉ Email</a>
+<a class="btn" href="https://wa.me/923115414770" target="_blank">◉ WhatsApp</a>
+</div>
+</div></section>
+</main>
+<footer class="premium-footer">
+  <div class="footer-glow"></div>
+  <div class="footer-brand">NAQASH <span>TECH</span></div>
+  <p style="color:var(--muted); font-size:0.75rem;">CREATIVE • DIGITAL • INNOVATIVE</p>
+  <small style="color:#a98c94; font-size:0.68rem;">© 2026 NAQASH TECH · Designed by NAQASH ALI</small>
+</footer>
+
+<nav class="bottomnav">
+  <a class="active" href="#home">⌂<span>Home</span></a>
+  <a href="#gallery">▧<span>Gallery</span></a>
+  <a href="#work">◎<span>Work</span></a>
+  <a href="#contact">✉<span>Contact</span></a>
+</nav>
+
+<!-- Custom Cursor & Particles -->
+<div id="c-dot"></div><div id="c-trail"></div>
+<canvas id="cyberCanvas"></canvas>
+
+<!-- Aesthetic BGM -->
+<audio id="bgmAudio" loop preload="none">
+  <source src="https://cdn.pixabay.com/download/audio/2022/01/18/audio_d0a13f69d2.mp3?filename=cyberpunk-2099-10701.mp3" type="audio/mpeg">
+</audio>
+
+<!-- Smart AI Chatbot -->
+<button id="ntChatLauncher" class="nt-chat-launcher" aria-label="Open chat">✦ <span>Chat</span></button>
+<section id="ntChatPanel" class="nt-chat-panel" aria-label="NAQASH TECH chat" aria-hidden="true">
+<header class="nt-chat-head"><div><b>NAQASH TECH AI</b><small><i></i> Online · instant replies</small></div><button id="ntChatClose" aria-label="Close chat">×</button></header>
+<div class="nt-chat-messages" id="ntChatMessages"><div class="nt-bubble bot">Hello! 👋 Welcome to NAQASH TECH. How can I help you?</div></div>
+<div class="nt-chat-quick">
+  <button data-chat="Hello">Hello</button>
+  <button data-chat="Who are you?">Name</button>
+  <button data-chat="What services do you offer?">Services</button>
+  <button data-chat="Where are you located?">Location</button>
+</div>
+<form id="ntChatForm" class="nt-chat-form"><input id="ntChatInput" autocomplete="off" placeholder="Type a message..." aria-label="Type a message"><button type="submit">➤</button></form>
+<div class="nt-chat-foot">Automated assistant · For a person, use WhatsApp</div></section>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  // Theme Switcher Logic
+  const themes = { 't-red': '', 't-green': 'theme-green', 't-blue': 'theme-blue', 't-white': 'theme-white' };
+  let pColor = '#ff2947'; 
+  document.querySelectorAll('.t-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.t-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      document.body.className = themes[btn.dataset.theme];
+      if(btn.dataset.theme === 't-green') pColor = '#00ff88';
+      else if(btn.dataset.theme === 't-blue') pColor = '#00e5ff';
+      else if(btn.dataset.theme === 't-white') pColor = '#ffffff';
+      else pColor = '#ff2947';
+      // update cursor color
+      document.getElementById('c-dot').style.background = pColor;
+      document.getElementById('c-dot').style.boxShadow = `0 0 12px ${pColor}`;
+      document.getElementById('c-trail').style.borderColor = pColor;
+    });
+  });
+
+  // Cursor
+  const dot = document.getElementById('c-dot'), trail = document.getElementById('c-trail');
+  if(window.matchMedia("(pointer: fine)").matches) {
+    window.addEventListener('mousemove', (e) => {
+      dot.style.transform = `translate(calc(${e.clientX}px - 50%), calc(${e.clientY}px - 50%))`;
+      setTimeout(() => trail.style.transform = `translate(calc(${e.clientX}px - 50%), calc(${e.clientY}px - 50%))`, 60);
+    });
+  } else { dot.style.display = 'none'; trail.style.display = 'none'; }
+
+  // Time Widget
+  setInterval(() => {
+    document.getElementById('pkTime').innerText = "ATTOCK: " + new Date().toLocaleTimeString('en-US', {timeZone: 'Asia/Karachi', hour: '2-digit', minute:'2-digit', second:'2-digit'});
+  }, 1000);
+
+  // Music Toggle
+  const bgm = document.getElementById('bgmAudio'), mToggle = document.getElementById('musicToggle');
+  mToggle.addEventListener('click', () => {
+    if(bgm.paused) { bgm.play(); mToggle.innerText = "🎵 BGM: ON"; mToggle.classList.add('active-music'); }
+    else { bgm.pause(); mToggle.innerText = "🎵 BGM: OFF"; mToggle.classList.remove('active-music'); }
+  });
+
+  // Typing Effect
+  const roles = ["UI/UX Designer", "Web Developer", "Cyber Security", "Video Editor"];
+  let wId = 0, cId = 0, del = false;
+  const tSpan = document.getElementById('typingWords');
+  if(tSpan) {
+    function type() {
+      const w = roles[wId];
+      if(del) cId--; else cId++;
+      tSpan.innerText = w.substring(0, cId);
+      let s = del ? 40 : 80;
+      if(!del && cId === w.length) { s = 1800; del = true; }
+      else if(del && cId === 0) { del = false; wId = (wId + 1) % roles.length; s = 400; }
+      setTimeout(type, s);
+    }
+    setTimeout(type, 1000);
+  }
+
+  // Tilt & Magnetic Button
+  if(window.matchMedia("(pointer: fine)").matches) {
+    document.querySelectorAll('.panel, .tile, .post-card').forEach(c => {
+      c.addEventListener('mousemove', e => {
+        const r = c.getBoundingClientRect();
+        c.style.transform = `perspective(1000px) rotateX(${(e.clientY - r.top)/r.height*-15 + 7.5}deg) rotateY(${(e.clientX - r.left)/r.width*15 - 7.5}deg) scale3d(1.02,1.02,1.02)`;
+      });
+      c.addEventListener('mouseleave', () => c.style.transform = '');
+    });
+    document.querySelectorAll('.btn').forEach(b => {
+      b.addEventListener('mousemove', e => {
+        const r = b.getBoundingClientRect();
+        b.style.transform = `translate(${(e.clientX-r.left-r.width/2)*0.35}px, ${(e.clientY-r.top-r.height/2)*0.35}px)`;
+      });
+      b.addEventListener('mouseleave', () => b.style.transform = '');
+    });
+  }
+
+  // Particles Canvas
+  const cvs = document.getElementById('cyberCanvas'), ctx = cvs.getContext('2d');
+  let cw = cvs.width = window.innerWidth, ch = cvs.height = window.innerHeight;
+  const pts = Array(45).fill().map(() => ({ x: Math.random()*cw, y: Math.random()*ch, vx: (Math.random()-0.5)*0.6, vy: (Math.random()-0.5)*0.6, s: Math.random()*1.5+0.5 }));
+  window.addEventListener('resize', () => { cw = cvs.width = window.innerWidth; ch = cvs.height = window.innerHeight; });
+  function draw() {
+    ctx.clearRect(0, 0, cw, ch);
+    ctx.fillStyle = pColor; 
+    pts.forEach(p => {
+      p.x += p.vx; p.y += p.vy;
+      if(p.x < 0) p.x = cw; if(p.x > cw) p.x = 0; if(p.y < 0) p.y = ch; if(p.y > ch) p.y = 0;
+      ctx.beginPath(); ctx.arc(p.x, p.y, p.s, 0, Math.PI*2); ctx.fill();
+    });
+    requestAnimationFrame(draw);
+  }
+  draw();
+
+  // Scroll Progress
+  window.addEventListener('scroll', () => {
+    const p = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+    document.getElementById('scrollProgress').style.width = p + '%';
+    document.getElementById('backTop').classList.toggle('show', window.scrollY > 400);
+  });
+  document.getElementById('backTop').addEventListener('click', () => window.scrollTo(0,0));
+  document.querySelectorAll('.bottomnav a').forEach(a=>a.addEventListener('click',()=> { document.querySelectorAll('.bottomnav a').forEach(x=>x.classList.remove('active')); a.classList.add('active'); }));
+
+  // AI Chatbot Logic
+  const pnl = document.getElementById('ntChatPanel'), lnch = document.getElementById('ntChatLauncher'), cls = document.getElementById('ntChatClose'), msg = document.getElementById('ntChatMessages'), frm = document.getElementById('ntChatForm'), inp = document.getElementById('ntChatInput');
+  lnch.addEventListener('click', () => pnl.classList.contains('open') ? pnl.classList.remove('open') : pnl.classList.add('open'));
+  cls.addEventListener('click', () => pnl.classList.remove('open'));
+  
+  function addMsg(txt, who) {
+    const d = document.createElement('div'); d.className = 'nt-bubble ' + who; d.textContent = txt;
+    msg.appendChild(d); msg.scrollTop = msg.scrollHeight;
+  }
+  function botReply(t) {
+    t = t.toLowerCase(); let ans;
+    if(/\b(hi|hello|hey|salam|assalam|aoa)\b/.test(t)) ans = 'Hello! 😊 Welcome to NAQASH TECH. I am the AI Assistant. How can I help?';
+    else if(/\b(name|who are you)\b/.test(t)) ans = 'My name is Naqash Ali! I am a Web Developer and UI/UX Designer.';
+    else if(/service|work|offer|design|website/.test(t)) ans = 'I offer Premium Website Development, UI/UX Design, and Cyber Security services.';
+    else if(/contact|whatsapp|number|email/.test(t)) ans = 'Contact Naqash on WhatsApp: +923115414770 or Email: naqash78780@gmail.com.';
+    else if(/location|where|city/.test(t)) ans = 'I am based in Mirza, Attock, Pakistan.';
+    else ans = 'Thanks for your message! 😊 For a direct reply from Naqash, please tap the WhatsApp button below.';
+    setTimeout(() => addMsg(ans, 'bot'), 450);
+  }
+  frm.addEventListener('submit', e => { e.preventDefault(); const v = inp.value.trim(); if(!v) return; addMsg(v, 'user'); inp.value = ''; botReply(v); });
+  document.querySelectorAll('[data-chat]').forEach(b => b.addEventListener('click', () => { addMsg(b.dataset.chat, 'user'); botReply(b.dataset.chat); }));
+
+  // Skill Bars
+  setTimeout(()=> document.querySelectorAll('.bar i').forEach(b => b.style.width = b.dataset.progress + '%'), 500);
+});
+</script>
+</body>
+</html>
